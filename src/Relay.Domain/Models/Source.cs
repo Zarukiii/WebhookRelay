@@ -10,7 +10,7 @@ public class Source
     public string? Description { get; set; }
     public string EncryptedKey { get; set; }
     public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
+    public DateTime? UpdatedAt { get; set; }
 
     public void Create(
         string name,

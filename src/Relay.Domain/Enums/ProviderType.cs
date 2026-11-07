@@ -4,5 +4,6 @@ public enum ProviderType
 {
     Github,
     Stripe,
-    Shopify
+    Shopify,
+    Generic
 }
