@@ -8,7 +8,7 @@ public class Source
     public string Name { get; set; }
     public ProviderType ProviderType { get; set; }
     public string? Description { get; set; }
-    public string EncryptedKey { get; set; }
+    public string SigningSecret { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
 
@@ -21,7 +21,7 @@ public class Source
         Name = name;
         ProviderType = providerType;
         Description = description;
-        EncryptedKey = encryptedKey;
+        SigningSecret = encryptedKey;
         CreatedAt = DateTime.UtcNow;
     }
 
@@ -34,7 +34,7 @@ public class Source
         Name = name;
         ProviderType = providerType;
         Description = description;
-        EncryptedKey = encryptedKey;
+        SigningSecret = encryptedKey;
         UpdatedAt = DateTime.UtcNow;
     }
 }

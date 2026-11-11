@@ -13,7 +13,7 @@ internal sealed class SourceConfiguration : IEntityTypeConfiguration<Source>
         
         builder.Property(s => s.Name).HasMaxLength(100).IsRequired();
         builder.Property(s => s.Description).HasMaxLength(500);
-        builder.Property(s => s.EncryptedKey).HasMaxLength(512).IsRequired();
+        builder.Property(s => s.SigningSecret).HasMaxLength(512).IsRequired();
         
         builder.Property(s => s.ProviderType).HasConversion<string>().HasMaxLength(50);
         
