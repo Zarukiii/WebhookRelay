@@ -9,13 +9,13 @@ public class SecretEncryptor(IDataProtectionProvider dataProtectionProvider) : I
     
     private readonly IDataProtector _dataProtector = dataProtectionProvider.CreateProtector(Purpose);
 
-    public string EncryptAsync(string secret)
+    public string Encrypt(string secret)
     {
         ArgumentException.ThrowIfNullOrEmpty(secret);
         return _dataProtector.Protect(secret);
     }
 
-    public string DecryptAsync(string secret)
+    public string Decrypt(string secret)
     {
         ArgumentException.ThrowIfNullOrEmpty(secret);
         return _dataProtector.Unprotect(secret);
