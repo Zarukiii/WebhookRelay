@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Relay.Application.Contracts;
 using Relay.Infrastructure.Persistence;
+using Relay.Infrastructure.Persistence.Repositories;
 using Relay.Infrastructure.Security;
 
 namespace Relay.Infrastructure;
@@ -27,6 +28,8 @@ public static class DependencyInjection
             .PersistKeysToDbContext<RelayDbContext>();
 
         services.AddSingleton<ISecretEncryptor, SecretEncryptor>();
+        
+        services.AddScoped<ISourceRepository, SourceRepository>();
         
         return services;
     }
